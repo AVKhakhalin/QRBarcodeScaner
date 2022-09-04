@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="scanned_data_margin_start">10dp</dimen>
+    <dimen name="scanned_data_margin_end">10dp</dimen>
+    <dimen name="scanned_data_margin_bottom">50dp</dimen>
+    <dimen name="scanned_data_text_size">20sp</dimen>
+</resources>

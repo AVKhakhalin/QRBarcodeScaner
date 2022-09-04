@@ -1,10 +1,12 @@
 package com.github.oauth.repositories.qrbarcodescaner.di
 
 import com.github.oauth.repositories.qrbarcodescaner.utils.CICERONE_NAME
+import com.github.oauth.repositories.qrbarcodescaner.utils.FragmentScope
 import com.github.oauth.repositories.qrbarcodescaner.utils.MAIN_ACTIVITY_NAME
 import com.github.oauth.repositories.qrbarcodescaner.utils.navigation.AppScreens
 import com.github.oauth.repositories.qrbarcodescaner.utils.navigation.AppScreensImpl
 import com.github.oauth.repositories.qrbarcodescaner.view.activity.MainViewModel
+import com.github.oauth.repositories.qrbarcodescaner.view.camerax.CameraXFragmentViewModel
 import com.github.terrakok.cicerone.Cicerone
 import com.github.terrakok.cicerone.NavigatorHolder
 import com.github.terrakok.cicerone.Router
@@ -26,5 +28,12 @@ val screens = module {
     }
     single<Router> { get<Cicerone<Router>>(named(CICERONE_NAME)).router }
     single<AppScreens> { AppScreensImpl() }
+    //endregion
+    /** Классы для Scope фрагментов */ //region
+    scope(named(FragmentScope.SHOW_CAMERAX_FRAGMENT_SCOPE)) {
+        viewModel {
+            CameraXFragmentViewModel()
+        }
+    }
     //endregion
 }

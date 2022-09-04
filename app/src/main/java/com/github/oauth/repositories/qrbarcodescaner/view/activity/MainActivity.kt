@@ -33,6 +33,14 @@ class MainActivity: AppCompatActivity() {
         // Создание Scope для MainActivity
         val viewModel: MainViewModel by mainActivityScope.inject()
         this.viewModel = viewModel
+        // Отслеживание первого или последующего запусков MainActivity
+        if (savedInstanceState != null) {
+            // Установка текущего экрана приложения
+            navigatorHolder.setNavigator(navigator)
+        } else {
+            // Установка начального экрана приложения
+            this.viewModel.router.navigateTo(this.viewModel.screens.cameraXScreen())
+        }
         // Отображение содержимого окна
         setContentView(binding.root)
     }
