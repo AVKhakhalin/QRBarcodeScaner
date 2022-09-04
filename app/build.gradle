@@ -102,4 +102,7 @@ dependencies {
         // Koin for Tests
     testImplementation libs.koin.testsandroidx
     testImplementation libs.koin.testsio
+
+    // Cicerony
+    implementation libs.cicerony.runtime
 }
