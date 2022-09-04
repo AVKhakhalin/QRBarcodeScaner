@@ -29,15 +29,77 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    // Подключение binding
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.5.0'
-    implementation 'com.google.android.material:material:1.6.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    //Kotlin
+    implementation libs.kotlin.ktx
+    //AndroidX
+    implementation libs.androidX.appcompat
+    //Design
+    implementation libs.design.material
+    implementation libs.design.constrlayout
+    // LiveData
+    implementation libs.lifecycle.ktx
+
+    // MLKIT
+        // Use this dependency to bundle the model with your app
+    implementation libs.mlkit.scanning
+
+    // CAMERAX
+        // CameraX library
+    implementation libs.camerax.camera
+        // If you want to additionally use the CameraX Lifecycle library
+    implementation libs.camerax.lifecycle
+        // If you want to additionally use the CameraX View class
+    implementation libs.camerax.view
+
+    // Tests
+        // Core
+    testImplementation libs.tests.junit
+    androidTestImplementation libs.tests.ext
+        // Нужно для работы AndroidJUnit4 в инструментальных-тестах
+    androidTestImplementation libs.tests.espressocore
+    implementation fileTree(dir: libs.tests.filetreedir, include: libs.tests.filetreeinclude)
+        // Mockito
+    testImplementation libs.tests.mockitocore
+    testImplementation libs.tests.mockitoinline
+    testImplementation(libs.tests.mockitokotlin) {
+        exclude group: 'org.jetbrains.kotlin'
+        exclude group: 'org.mockito'
+    }
+        // Robolectric
+    testImplementation libs.tests.robolectric
+    testImplementation libs.tests.robolectriccore
+    testImplementation libs.tests.robolectricrunner
+    testImplementation libs.tests.ext // Нужно для работы AndroidJUnit4 в Unit-тестах
+    testImplementation libs.tests.robolectrictruth
+    testImplementation libs.tests.robolectricespressocore
+    testImplementation libs.tests.robolectricespressointents
+        // UI Automator
+    androidTestImplementation libs.tests.uiautomator
+    androidTestImplementation libs.tests.uiautomatorrules
+        // Fragment
+    debugImplementation libs.tests.fragmentWork
+        // RecyclerView
+    debugImplementation libs.tests.recyclerView
+
+    // Koin
+        //Koin core features
+    implementation libs.koin.core
+        //Koin main features for Android (Scope,ViewModel ...)
+    implementation libs.koin.android
+        //Koin Java Compatibility
+    implementation libs.koin.compat
+        // For Retrofit 2 coroutines
+    implementation libs.koin.retrofitcoroutines
+        // Koin for Tests
+    testImplementation libs.koin.testsandroidx
+    testImplementation libs.koin.testsio
 }
