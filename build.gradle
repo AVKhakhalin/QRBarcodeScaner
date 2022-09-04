@@ -1,4 +1,9 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+// Подключаем файл с библиотеками 'dependency.gradle'
+buildscript {
+    apply from: 'dependency.gradle'
+}
+// Подключение плагинов
 plugins {
     id 'com.android.application' version '7.2.2' apply false
     id 'com.android.library' version '7.2.2' apply false
@@ -8,3 +13,4 @@ plugins {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
