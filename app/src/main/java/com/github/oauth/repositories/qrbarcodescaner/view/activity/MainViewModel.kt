@@ -1,7 +1,10 @@
 package com.github.oauth.repositories.qrbarcodescaner.view.activity
 
 import com.github.oauth.repositories.qrbarcodescaner.utils.base.BaseViewModelForNavigation
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineExceptionHandler
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
 
 class MainViewModel: BaseViewModelForNavigation() {
     /** Задание переменных */ //region

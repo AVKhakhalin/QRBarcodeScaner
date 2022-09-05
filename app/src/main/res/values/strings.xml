@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">QRBarcodeScaner</string>
+    <string name="help_text">Для запуска камеры поверните телефон</string>
+    <string name="ssid">Имя WiFi сети:</string>
+    <string name="password">пароль:</string>
+    <string name="type">тип:</string>
+    <string name="title">Заголовок:</string>
+    <string name="url">URL:</string>
+    <!-- ERRORS -->
+    <string name="error_title">Ошибка:</string>
+    <string name="error_camera_permission">Не выдано разрешение на использование камеры</string>
+    <string name="error_illegalstateexception">IllegalStateException</string>
+    <string name="error_illegalargumentexception">IllegalArgumentException</string>
 </resources>

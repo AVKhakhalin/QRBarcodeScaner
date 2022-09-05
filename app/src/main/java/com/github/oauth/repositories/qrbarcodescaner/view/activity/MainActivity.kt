@@ -1,7 +1,7 @@
 package com.github.oauth.repositories.qrbarcodescaner.view.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.github.oauth.repositories.qrbarcodescaner.R
 import com.github.oauth.repositories.qrbarcodescaner.databinding.ActivityMainBinding
 import com.github.oauth.repositories.qrbarcodescaner.utils.MAIN_ACTIVITY_NAME
@@ -33,6 +33,14 @@ class MainActivity: AppCompatActivity() {
         // Создание Scope для MainActivity
         val viewModel: MainViewModel by mainActivityScope.inject()
         this.viewModel = viewModel
+        // Отслеживание первого или последующего запусков MainActivity
+        if (savedInstanceState != null) {
+            // Установка текущего экрана приложения
+            navigatorHolder.setNavigator(navigator)
+        } else {
+            // Установка начального экрана приложения
+            this.viewModel.router.navigateTo(this.viewModel.screens.cameraXScreen())
+        }
         // Отображение содержимого окна
         setContentView(binding.root)
     }
