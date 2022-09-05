@@ -1,7 +1,7 @@
 package com.github.oauth.repositories.qrbarcodescaner.view.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.github.oauth.repositories.qrbarcodescaner.R
 import com.github.oauth.repositories.qrbarcodescaner.databinding.ActivityMainBinding
 import com.github.oauth.repositories.qrbarcodescaner.utils.MAIN_ACTIVITY_NAME

@@ -5,14 +5,21 @@ import com.github.oauth.repositories.qrbarcodescaner.utils.FragmentScope
 import com.github.oauth.repositories.qrbarcodescaner.utils.MAIN_ACTIVITY_NAME
 import com.github.oauth.repositories.qrbarcodescaner.utils.navigation.AppScreens
 import com.github.oauth.repositories.qrbarcodescaner.utils.navigation.AppScreensImpl
+import com.github.oauth.repositories.qrbarcodescaner.utils.resources.ResourcesProviderImpl
 import com.github.oauth.repositories.qrbarcodescaner.view.activity.MainViewModel
 import com.github.oauth.repositories.qrbarcodescaner.view.camerax.CameraXFragmentViewModel
 import com.github.terrakok.cicerone.Cicerone
 import com.github.terrakok.cicerone.NavigatorHolder
 import com.github.terrakok.cicerone.Router
+import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
+
+val utils = module {
+    // Получение доступа к ресурсам
+    single<ResourcesProviderImpl> { ResourcesProviderImpl(androidContext()) }
+}
 
 val screens = module {
     // Scope для MainActivity

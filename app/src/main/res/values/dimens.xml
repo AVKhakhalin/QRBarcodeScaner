@@ -4,4 +4,7 @@
     <dimen name="scanned_data_margin_end">10dp</dimen>
     <dimen name="scanned_data_margin_bottom">50dp</dimen>
     <dimen name="scanned_data_text_size">20sp</dimen>
+    <dimen name="help_text_size">30sp</dimen>
+    <dimen name="help_margin">16dp</dimen>
+    <dimen name="help_width">0dp</dimen>
 </resources>

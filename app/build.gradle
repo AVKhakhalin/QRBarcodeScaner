@@ -60,36 +60,6 @@ dependencies {
         // If you want to additionally use the CameraX View class
     implementation libs.camerax.view
 
-    // Tests
-        // Core
-    testImplementation libs.tests.junit
-    androidTestImplementation libs.tests.ext
-        // Нужно для работы AndroidJUnit4 в инструментальных-тестах
-    androidTestImplementation libs.tests.espressocore
-    implementation fileTree(dir: libs.tests.filetreedir, include: libs.tests.filetreeinclude)
-        // Mockito
-    testImplementation libs.tests.mockitocore
-    testImplementation libs.tests.mockitoinline
-    testImplementation(libs.tests.mockitokotlin) {
-        exclude group: 'org.jetbrains.kotlin'
-        exclude group: 'org.mockito'
-    }
-        // Robolectric
-    testImplementation libs.tests.robolectric
-    testImplementation libs.tests.robolectriccore
-    testImplementation libs.tests.robolectricrunner
-    testImplementation libs.tests.ext // Нужно для работы AndroidJUnit4 в Unit-тестах
-    testImplementation libs.tests.robolectrictruth
-    testImplementation libs.tests.robolectricespressocore
-    testImplementation libs.tests.robolectricespressointents
-        // UI Automator
-    androidTestImplementation libs.tests.uiautomator
-    androidTestImplementation libs.tests.uiautomatorrules
-        // Fragment
-    debugImplementation libs.tests.fragmentWork
-        // RecyclerView
-    debugImplementation libs.tests.recyclerView
-
     // Koin
         //Koin core features
     implementation libs.koin.core
