@@ -5,6 +5,8 @@
       <map>
         <entry key="..\:/Android/Projects/QRBarcodeScaner/app/src/main/res/layout/activity_main.xml" value="0.23294118300441247" />
         <entry key="..\:/Android/Projects/QRBarcodeScaner/app/src/main/res/layout/fragment_camerax.xml" value="0.30104166666666665" />
+        <entry key="..\:/Android/Projects/QRBarcodeScaner/app/src/main/res/layout/fragment_main.xml" value="0.303125" />
+        <entry key="..\:/Android/Projects/QRBarcodeScaner/app/src/main/res/layout/fragment_qrcode.xml" value="0.30104166666666665" />
       </map>
     </option>
   </component>

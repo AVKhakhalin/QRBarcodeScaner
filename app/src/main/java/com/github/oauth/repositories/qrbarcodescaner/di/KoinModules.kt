@@ -8,6 +8,8 @@ import com.github.oauth.repositories.qrbarcodescaner.utils.navigation.AppScreens
 import com.github.oauth.repositories.qrbarcodescaner.utils.resources.ResourcesProviderImpl
 import com.github.oauth.repositories.qrbarcodescaner.view.activity.MainViewModel
 import com.github.oauth.repositories.qrbarcodescaner.view.camerax.CameraXFragmentViewModel
+import com.github.oauth.repositories.qrbarcodescaner.view.main.MainFragmentViewModel
+import com.github.oauth.repositories.qrbarcodescaner.view.qrcode.QRCodeFragmentViewModel
 import com.github.terrakok.cicerone.Cicerone
 import com.github.terrakok.cicerone.NavigatorHolder
 import com.github.terrakok.cicerone.Router
@@ -40,6 +42,16 @@ val screens = module {
     scope(named(FragmentScope.SHOW_CAMERAX_FRAGMENT_SCOPE)) {
         viewModel {
             CameraXFragmentViewModel()
+        }
+    }
+    scope(named(FragmentScope.SHOW_QRCODE_FRAGMENT_SCOPE)) {
+        viewModel {
+            QRCodeFragmentViewModel()
+        }
+    }
+    scope(named(FragmentScope.SHOW_MAIN_FRAGMENT_SCOPE)) {
+        viewModel {
+            MainFragmentViewModel()
         }
     }
     //endregion

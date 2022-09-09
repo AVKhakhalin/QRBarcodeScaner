@@ -63,7 +63,6 @@ class CameraXFragment: BaseFragment<FragmentCameraxBinding>(FragmentCameraxBindi
         // Загрузка ранее сохранённых данных в SharedPreferences
         loadSavedData()
     }
-
     override fun onDetach() {
         // Удаление скоупа для данного фрагмента
         showCameraXFragmentScope.close()

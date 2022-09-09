@@ -6,19 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".view.activity.MainActivity">
 
-    <TextView
-        android:id="@+id/help"
-        android:layout_width="@dimen/help_width"
-        android:layout_height="wrap_content"
-        android:text="@string/help_text"
-        android:gravity="center"
-        android:textSize="@dimen/help_text_size"
-        android:layout_margin="@dimen/help_margin"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
-
     <FrameLayout
         android:id="@+id/activity_fragments_container"
         android:layout_width="match_parent"
