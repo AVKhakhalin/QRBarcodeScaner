@@ -8,7 +8,7 @@ import androidx.lifecycle.MutableLiveData
 import com.github.oauth.repositories.qrbarcodescaner.R
 import com.github.oauth.repositories.qrbarcodescaner.utils.TAG_LOG
 import com.github.oauth.repositories.qrbarcodescaner.utils.base.BaseViewModelForNavigation
-import com.github.oauth.repositories.qrbarcodescaner.utils.resources.ResourcesProviderImpl
+import com.github.oauth.repositories.qrbarcodescaner.utils.resources.ResourcesProvider
 import org.koin.java.KoinJavaComponent
 import java.util.concurrent.ExecutionException
 
@@ -17,7 +17,7 @@ class CameraXFragmentViewModel: BaseViewModelForNavigation() {
     // LiveData
     private var cameraProviderLiveData: MutableLiveData<ProcessCameraProvider>? = null
     // Получение доступа к ресурсам
-    private val resourcesProviderImpl: ResourcesProviderImpl = KoinJavaComponent.getKoin().get()
+    private val resourcesProviderImpl: ResourcesProvider = KoinJavaComponent.getKoin().get()
     //endregion
 
     val processCameraProvider: LiveData<ProcessCameraProvider>
@@ -25,7 +25,7 @@ class CameraXFragmentViewModel: BaseViewModelForNavigation() {
             if (cameraProviderLiveData == null) {
                 cameraProviderLiveData = MutableLiveData()
                 val cameraProviderFuture =
-                    ProcessCameraProvider.getInstance(resourcesProviderImpl.context)
+                    ProcessCameraProvider.getInstance(resourcesProviderImpl.getContext())
                 cameraProviderFuture.addListener(
                     Runnable {
                         try {
@@ -38,7 +38,7 @@ class CameraXFragmentViewModel: BaseViewModelForNavigation() {
                                 "${resourcesProviderImpl.getString(R.string.error_title)} ", e)
                         }
                     },
-                    ContextCompat.getMainExecutor(resourcesProviderImpl.context)
+                    ContextCompat.getMainExecutor(resourcesProviderImpl.getContext())
                 )
             }
             return cameraProviderLiveData!!

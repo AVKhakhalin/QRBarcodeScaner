@@ -3,10 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.github.oauth.repositories.qrbarcodescaner">
 
+    <!-- Разрешения на досуп к камере телефона -->
     <uses-feature android:name="android.hardware.camera" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <!-- Получение доступа на запись QR-кода в файле на телефон -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
+    <!-- Включена поддержка больших файлов (largeHeap) -->
     <application
+        android:requestLegacyExternalStorage="true"
+        android:largeHeap="true"
+
         android:name=".app.App"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -26,5 +34,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

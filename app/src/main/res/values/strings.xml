@@ -1,14 +1,24 @@
 <resources>
-    <string name="app_name">QRBarcodeScaner</string>
-    <string name="help_text">Для запуска камеры поверните телефон</string>
-    <string name="ssid">Имя WiFi сети:</string>
-    <string name="password">пароль:</string>
-    <string name="type">тип:</string>
-    <string name="title">Заголовок:</string>
-    <string name="url">URL:</string>
     <!-- ERRORS -->
     <string name="error_title">Ошибка:</string>
     <string name="error_camera_permission">Не выдано разрешение на использование камеры</string>
     <string name="error_illegalstateexception">IllegalStateException</string>
     <string name="error_illegalargumentexception">IllegalArgumentException</string>
+
+
+    <string name="app_name">QRBarcodeScaner</string>
+    <string name="ssid">Имя WiFi сети:</string>
+    <string name="password">пароль:</string>
+    <string name="type">тип:</string>
+    <string name="title">Заголовок:</string>
+    <string name="url">URL:</string>
+    <string name="image_qrcode_description">QR-код</string>
+    <string name="qr_code_generate_button_text">Создать QR-код</string>
+    <string name="input_text_field_hint">Введите вашу информацию для QR-кода</string>
+    <string name="codes_scanner_button_text">Распознать QR-, штрих-код</string>
+    <string name="qrcode_generator_button_text">Создать QR-код</string>
+    <string name="save_title_text">Параметры сохранения:</string>
+    <string name="save_main_department_title_text">Основной\nраздел</string>
+    <string name="save_applicaton_department_title_text">Раздел\nприложения</string>
+    <string name="save_qrcode_note">QR-код сохранён в папку:</string>
 </resources>

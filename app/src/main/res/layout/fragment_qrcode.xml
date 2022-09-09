@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal_guideline_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal_guideline_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.45" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical_guideline_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical_guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <ImageView
+        android:id="@+id/image_qrcode"
+        android:layout_width="@dimen/zero_size"
+        android:layout_height="@dimen/zero_size"
+        android:contentDescription="@string/image_qrcode_description"
+        app:layout_constraintStart_toStartOf="@id/vertical_guideline_start"
+        app:layout_constraintEnd_toEndOf="@id/vertical_guideline_end"
+        app:layout_constraintTop_toTopOf="@id/horizontal_guideline_top"
+        app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_bottom"/>
+
+    <EditText
+        android:id="@+id/input_text_field"
+        android:layout_width="@dimen/zero_size"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/image_qrcode"
+        android:layout_marginTop="@dimen/input_text_field_margin_top"
+        android:hint="@string/input_text_field_hint"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@id/image_qrcode"
+        app:layout_constraintStart_toStartOf="@id/vertical_guideline_start"
+        app:layout_constraintEnd_toEndOf="@id/vertical_guideline_end"/>
+
+    <Button
+        android:id="@+id/qr_code_generate_button"
+        android:layout_width="@dimen/zero_size"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/input_text_field"
+        android:layout_marginTop="@dimen/qr_code_generate_button_margin_top"
+        android:text="@string/qr_code_generate_button_text"
+        app:layout_constraintTop_toBottomOf="@id/input_text_field"
+        app:layout_constraintStart_toStartOf="@id/vertical_guideline_start"
+        app:layout_constraintEnd_toEndOf="@id/vertical_guideline_end" />
+    
+    <TextView
+        android:id="@+id/save_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save_title_text"
+        android:textSize="@dimen/save_title_text_size"
+        android:textStyle="italic"
+        android:layout_marginTop="@dimen/save_title_margin_top"
+        app:layout_constraintTop_toBottomOf="@id/qr_code_generate_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/save_main_department_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save_main_department_title_text"
+        android:textSize="@dimen/save_main_department_title_text_size"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/save_main_department_title_margin_top"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="@id/vertical_guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/save_title"/>
+
+    <TextView
+        android:id="@+id/save_applicaton_department_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save_applicaton_department_title_text"
+        android:textSize="@dimen/save_applicaton_department_title_text_size"
+        android:textStyle="normal"
+        android:layout_marginTop="@dimen/save_applicaton_department_title_margin_top"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="@id/vertical_guideline_end"
+        app:layout_constraintTop_toBottomOf="@id/save_title"/>
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/save_chooser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="UseSwitchCompatOrMaterialXml"
+        app:layout_constraintStart_toEndOf="@id/save_main_department_title"
+        app:layout_constraintEnd_toStartOf="@id/save_applicaton_department_title"
+        app:layout_constraintTop_toTopOf="@id/save_main_department_title"
+        app:layout_constraintBottom_toBottomOf="@id/save_main_department_title" />
+
+    <!-- Индикатор загрузки -->
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="@dimen/zero_size"
+        android:layout_height="@dimen/zero_size"
+        android:layout_gravity="center"
+        android:visibility="invisible"
+        app:layout_constraintTop_toTopOf="@id/horizontal_guideline_top"
+        app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_bottom"
+        app:layout_constraintStart_toStartOf="@id/vertical_guideline_start"
+        app:layout_constraintEnd_toEndOf="@id/vertical_guideline_end" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

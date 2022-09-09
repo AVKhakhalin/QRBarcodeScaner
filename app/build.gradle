@@ -47,6 +47,8 @@ dependencies {
     implementation libs.design.constrlayout
     // LiveData
     implementation libs.lifecycle.ktx
+    // Lifecycle:
+    implementation libs.lifecycle.extensions
 
     // MLKIT
         // Use this dependency to bundle the model with your app
@@ -75,4 +77,8 @@ dependencies {
 
     // Cicerony
     implementation libs.cicerony.runtime
+
+    // QRGenearator (zxing)
+    implementation libs.qrcode.qrgenerator
+
 }

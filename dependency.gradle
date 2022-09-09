@@ -44,6 +44,7 @@ def lifecycleVersion = "2.2.0"
 def mlkitVersion = "17.0.0"
 def cameraxVersion = "1.0.2"
 def cameraxViewVersion = "1.0.0-alpha30"
+def qrcodeVersion = "4.3.0"
 ext {
     libs = [:]
 
@@ -193,4 +194,8 @@ ext {
     camerax.lifecycle = "androidx.camera:camera-lifecycle:$cameraxVersion"
         // If you want to additionally use the CameraX View class
     camerax.view = "androidx.camera:camera-view:$cameraxViewVersion"
+    // QRGenerator (zxing)
+    qrcode = [:]
+    libs.qrcode = qrcode
+    qrcode.qrgenerator = "com.journeyapps:zxing-android-embedded:$qrcodeVersion"
 }
