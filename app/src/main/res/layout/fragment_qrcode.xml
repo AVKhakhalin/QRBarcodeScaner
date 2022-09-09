@@ -111,4 +111,17 @@
         app:layout_constraintEnd_toStartOf="@id/save_applicaton_department_title"
         app:layout_constraintTop_toTopOf="@id/save_main_department_title"
         app:layout_constraintBottom_toBottomOf="@id/save_main_department_title" />
+
+    <!-- Индикатор загрузки -->
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="@dimen/zero_size"
+        android:layout_height="@dimen/zero_size"
+        android:layout_gravity="center"
+        android:visibility="invisible"
+        app:layout_constraintTop_toTopOf="@id/horizontal_guideline_top"
+        app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_bottom"
+        app:layout_constraintStart_toStartOf="@id/vertical_guideline_start"
+        app:layout_constraintEnd_toEndOf="@id/vertical_guideline_end" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
